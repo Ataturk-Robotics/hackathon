@@ -33,6 +33,8 @@ public class GameController : MonoBehaviour
         mainCam.GetComponent<CameraFollow>().enabled = !gameOver;
         gameOverScreen.SetActive(gameOver);
 
+        if(Input.GetKeyDown(KeyCode.Escape)) pauseSet(!pause);
+
     }
 
     public void pauseSet(bool p)
@@ -43,6 +45,10 @@ public class GameController : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BackToMainMenu(){
+        SceneManager.LoadScene("MainMenu");
     }
 
 

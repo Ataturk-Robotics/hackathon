@@ -78,6 +78,11 @@ public class Player : MonoBehaviour
             Vector3.Scale(rb.velocity, new Vector3(1, 0, 1));
             rb.AddForce(new Vector3(0, localJumpForce, 0), ForceMode.Impulse);
         }
+        if ((Input.GetKey(KeyCode.S) || (Input.GetKey(KeyCode.DownArrow))))
+        {
+            Vector3.Scale(rb.velocity, new Vector3(1, 0, 1));
+            rb.AddForce(new Vector3(0, -localJumpForce, 0), ForceMode.Impulse);
+        }
     }
 
     void serbestHareket()
